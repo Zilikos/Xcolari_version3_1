@@ -109,9 +109,9 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
             estudiante.setContrasena(contrasena);
 
             // Getting the ID from firebase database.
-            String studentRecordIDFromServer = databaseReference.push().getKey();
+            //String studentRecordIDFromServer = databaseReference.push().getKey();
             // Adding the both name and number values using student details class object using ID.
-            databaseReference.child(studentRecordIDFromServer).setValue(estudiante);
+            databaseReference.child(usuario).setValue(estudiante);
 
         }
         if(!validateEmail(correo)){
@@ -124,7 +124,6 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         if(!contrasena.equals(confirmacion)){
             Toast.makeText(getBaseContext(),"Contraseña no coincide",Toast.LENGTH_SHORT).show();
         }
-        //Toast.makeText(getBaseContext(),correo+" "+validateEmail(correo),Toast.LENGTH_SHORT).show();
 
     }
 }
