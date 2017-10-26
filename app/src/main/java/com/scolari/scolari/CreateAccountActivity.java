@@ -9,10 +9,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.firebase.client.Firebase;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.scolari.scolari.model.Estudiante;
 
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
+
+    // Declaring String variable ( In which we are storing firebase server URL ).
+    public static final String Firebase_Server_URL = "https://xcolariv3.firebaseio.com/";
+    Firebase firebase;
+    DatabaseReference databaseReference;
+    //root database name
+    public static final String Database_Path = "XUser_Database";
 
     private EditText email,user,password_createaccount,confirmPassword;
     private Button joinUs;
@@ -79,22 +90,36 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         correo = String.valueOf(email.getText());
         usuario = String.valueOf(user.getText());
-
-
-        if(validateEmail(correo)){
-            Toast.makeText(getBaseContext(),"Correo valido",Toast.LENGTH_SHORT).show();
-
-        }else{
-            Toast.makeText(getBaseContext(),"Correo invalido",Toast.LENGTH_SHORT).show();
-        }
-        if(validateUser(usuario)){
-            Toast.makeText(getBaseContext(),"Usuario valido",Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(getBaseContext(),"Usuario invalido",Toast.LENGTH_SHORT).show();
-        }
-
         contrasena = String.valueOf(password_createaccount.getText());
         confirmacion = String.valueOf(confirmPassword.getText());
+
+        Firebase.setAndroidContext(CreateAccountActivity.this);
+
+        firebase = new Firebase(Firebase_Server_URL);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference(Database_Path);
+
+        if(validateEmail(correo) && validateUser(usuario) && contrasena.equals(confirmacion)){
+            Toast.makeText(getBaseContext(),"Usuario Registrado",Toast.LENGTH_SHORT).show();
+
+            Estudiante estudiante = new Estudiante();
+
+            estudiante.setCorreo(correo);
+            estudiante.setUsuario(usuario);
+            estudiante.setContrasena(contrasena);
+
+            // Getting the ID from firebase database.
+            String studentRecordIDFromServer = databaseReference.push().getKey();
+            // Adding the both name and number values using student details class object using ID.
+            databaseReference.child(studentRecordIDFromServer).setValue(estudiante);
+
+        }
+        if(!validateEmail(correo)){
+            Toast.makeText(getBaseContext(),"Correo invalido",Toast.LENGTH_SHORT).show();
+        }
+        if(!validateUser(usuario)){
+            Toast.makeText(getBaseContext(),"Usuario invalido",Toast.LENGTH_SHORT).show();
+        }
 
         if(!contrasena.equals(confirmacion)){
             Toast.makeText(getBaseContext(),"Contraseña no coincide",Toast.LENGTH_SHORT).show();
