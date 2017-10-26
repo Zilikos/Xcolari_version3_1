@@ -5,155 +5,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.scolari.scolari.CreateAccountActivity">
+    tools:context="com.scolari.scolari.AnadirPeriodo">
 
-    <include layout="@layout/actionbar_toolbar"
-        android:id="@+id/include"></include>
-
+    <include layout="@layout/actionbar_toolbar"></include>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
-
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/activity_vertical_margin"
             android:orientation="vertical"
-            >
-
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/EditTextBlack"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/materiaNewAct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_nameMateria"
-
-                    />
-
-            </android.support.design.widget.TextInputLayout>
-
-
+            android:padding="@dimen/activity_vertical_margin">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/EditTextBlack"
                 android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:theme="@style/EditTextBlack">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/tareaNewAct"
+                    android:id="@+id/periodoNewPer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_tarea"
-                    />
+                    android:hint="@string/hint_namePeriodo" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/EditTextBlack"
                 android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:theme="@style/EditTextBlack">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/descripcionNewAct"
+                    android:id="@+id/descripcionNewPer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_descripcionAct"
-
-                    />
+                    android:hint="@string/hint_descripcionPer" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/EditTextBlack"
                 android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:theme="@style/EditTextBlack">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/e_fecha"
+                    android:id="@+id/e_fechaIni"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_fechaAct"
-
-                    />
+                    android:hint="@string/hint_fechaAct" />
 
             </android.support.design.widget.TextInputLayout>
-
 
             <Button
-                android:id="@+id/b_fecha"
+                android:id="@+id/b_fechaIni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Agregar fecha"
-                android:theme="@style/RaisedButtonDark"
-                />
-
-
-
-
+                android:theme="@style/RaisedButtonDark" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/EditTextBlack"
                 android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:theme="@style/EditTextBlack">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/e_hora"
+                    android:id="@+id/e_fechaFin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_HorarioAct"
-
-                    />
+                    android:hint="@string/hint_fechaAct" />
 
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/b_hora"
+                android:id="@+id/b_fechaFin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar Hora"
-                android:theme="@style/RaisedButtonDark"
-                />
-
-
-
-
-
-
-
-
-
-
+                android:text="Agregar fecha"
+                android:theme="@style/RaisedButtonDark" />
 
             <Button
-                android:id="@+id/CrearAct"
+                android:id="@+id/CrearPer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_button_creatAct"
-                android:theme="@style/RaisedButtonDark"
-                />
-
-
-
+                android:theme="@style/RaisedButtonDark" />
 
         </LinearLayout>
 

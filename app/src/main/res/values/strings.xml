@@ -20,15 +20,23 @@
     <string name="hint_confirm_password">Confirmar Contraseña</string>
     <string name="text_button_createaccount">Únete</string>
     <string name="toolbar_tittle_createaccount">Crear Cuenta</string>
+    <string name="hint_namePeriodo">Periodo</string>
     <string name="hint_nameMateria">Materia</string>
     <string name="hint_tarea">Nombre de la tarea</string>
     <string name="hint_descripcionAct">Descripción</string>
+    <string name="hint_descripcionPer">Descripción</string>
     <string name="hint_Horario">Horario</string>
     <string name="hint_HorarioAct">Horario</string>
     <string name="hint_fechaAct">Fecha</string>
+    <string name="hint_aula">Aula</string>
     <string name="text_button_creatAct">Crear</string>
     <string name="text_button_PriorityAct">Prioridad</string>
     <string name="titlemateria_name">Ing. Software</string>
     <string name="materianame_title">Ing. sfotware</string>
+
+    <!-- Strings para toast floatingButton -->
+    <string name="mensaje_periodo">Nuevo Periodo</string>
+    <string name="mensaje_materia">Nueva Materia</string>
+    <string name="mensaje_actividad">Nueva Actividad</string>
 
 </resources>

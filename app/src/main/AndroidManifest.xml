@@ -25,6 +25,10 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".AnadirActividad"></activity>
+        <activity android:name=".AnadirPeriodo"></activity>
+        <activity android:name=".AnadirMateria"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

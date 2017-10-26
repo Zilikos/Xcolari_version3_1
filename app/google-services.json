@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "145783909357",
+    "firebase_url": "https://xcolariv3.firebaseio.com",
+    "project_id": "xcolariv3",
+    "storage_bucket": "xcolariv3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145783909357:android:187b5886089c4a13",
+        "android_client_info": {
+          "package_name": "com.scolari.scolari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145783909357-7e0npcguot3s05ur5gitpajd1e6q8r9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scolari.scolari",
+            "certificate_hash": "9ff1cc9f42a76a75ea611753869ff4cf0cfb541f"
+          }
+        },
+        {
+          "client_id": "145783909357-e0limelkj4255m7o2pan2v8t4sm03rn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzxW1jb4d8p1ooiDVw6RtwVNkp8dfFMSI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145783909357-e0limelkj4255m7o2pan2v8t4sm03rn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

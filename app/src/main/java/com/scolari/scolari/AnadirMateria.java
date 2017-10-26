@@ -1,38 +1,37 @@
 package com.scolari.scolari;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.ToggleButton;
 
-import com.scolari.scolari.fragments.AcademyFragment;
+/**
+ * Created by luisangelnanez on 24/10/17.
+ */
 
-public class AnadirActividad extends AppCompatActivity  implements View.OnClickListener{
+public class AnadirMateria extends AppCompatActivity implements View.OnClickListener{
 
-    Button b_fecha,b_hora;
-    EditText e_fecha,e_hora;
-    private int dia,mes,anio,hora,minutos;
+    Button b_hora;
+    EditText e_hora;
+    private int hora,minutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anadir_actividad);
+        setContentView(R.layout.activity_anadir_materia);
 
-
-        b_fecha =(Button) findViewById(R.id.b_fecha);
         b_hora = (Button) findViewById(R.id.b_hora);
-        e_fecha =(EditText) findViewById(R.id.e_fecha);
         e_hora = (EditText) findViewById(R.id.e_hora);
-        b_fecha.setOnClickListener(this);
         b_hora.setOnClickListener(this);
 
 
@@ -41,22 +40,7 @@ public class AnadirActividad extends AppCompatActivity  implements View.OnClickL
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onClick(View v) {
-        if(v==b_fecha) {
-            final Calendar c= Calendar.getInstance();
-            dia=c.get(Calendar.DAY_OF_MONTH);
-            mes=c.get(Calendar.MONTH);
-            anio=c.get(Calendar.YEAR);
-
-            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    e_fecha.setText(dayOfMonth+"/"+(month+1)+"/"+year);
-                }
-            }
-                    ,dia,mes,anio);
-            datePickerDialog.show();
-        }
-        if(v==b_hora){
+        if(v==b_hora) {
             final Calendar c= Calendar.getInstance();
             hora=c.get(Calendar.HOUR_OF_DAY);
             minutos=c.get(Calendar.MINUTE);
@@ -70,9 +54,4 @@ public class AnadirActividad extends AppCompatActivity  implements View.OnClickL
             timePickerDialog.show();
         }
     }
-
 }
-
-
-
-

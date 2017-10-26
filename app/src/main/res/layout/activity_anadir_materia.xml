@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.scolari.scolari.CreateAccountActivity">
+    tools:context="com.scolari.scolari.AnadirMateria">
 
     <include layout="@layout/actionbar_toolbar"
         android:id="@+id/include"></include>
@@ -15,50 +15,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
-
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/activity_vertical_margin"
-            android:orientation="vertical"
-            >
-
+            android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/EditTextBlack"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:layout_marginTop="@dimen/edittext_margin_createaccount">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/materiaNewAct"
+                    android:id="@+id/materiaNewMat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_nameMateria"
-
-                    />
-
-            </android.support.design.widget.TextInputLayout>
-
-
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/EditTextBlack"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/tareaNewAct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_tarea"
-                    />
+                    android:hint="@string/hint_nameMateria" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -66,16 +41,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/EditTextBlack"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:layout_marginTop="@dimen/edittext_margin_createaccount">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/descripcionNewAct"
+                    android:id="@+id/materiaNewPer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_descripcionAct"
-
-                    />
+                    android:hint="@string/hint_namePeriodo" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -83,46 +55,83 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/EditTextBlack"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:layout_marginTop="@dimen/edittext_margin_createaccount">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/e_fecha"
+                    android:id="@+id/e_Aula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_fechaAct"
-
-                    />
+                    android:hint="@string/hint_aula" />
 
             </android.support.design.widget.TextInputLayout>
 
-
-            <Button
-                android:id="@+id/b_fecha"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar fecha"
-                android:theme="@style/RaisedButtonDark"
-                />
+                android:orientation="horizontal">
 
+                <ToggleButton
+                    android:id="@+id/tb_domingo"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="D"
+                    android:textOn="D"/>
 
+                <ToggleButton
+                    android:id="@+id/tb_lunes"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="L"
+                    android:textOn="L"/>
 
+                <ToggleButton
+                    android:id="@+id/tb_martes"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="M"
+                    android:textOn="M"/>
 
+                <ToggleButton
+                    android:id="@+id/tb_miercoles"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="M"
+                    android:textOn="M"/>
+
+                <ToggleButton
+                    android:id="@+id/tb_jueves"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="J"
+                    android:textOn="J"/>
+
+                <ToggleButton
+                    android:id="@+id/tb_viernes"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="V"
+                    android:textOn="V"/>
+
+                <ToggleButton
+                    android:id="@+id/tb_sabado"
+                    android:layout_width="21pt"
+                    android:layout_height="wrap_content"
+                    android:textOff="S"
+                    android:textOn="S"/>
+
+            </LinearLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/EditTextBlack"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
-                >
+                android:layout_marginTop="@dimen/edittext_margin_createaccount">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/e_hora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_HorarioAct"
-
-                    />
+                    android:hint="@string/hint_HorarioAct" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -131,29 +140,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Agregar Hora"
-                android:theme="@style/RaisedButtonDark"
-                />
-
-
-
-
-
-
-
-
-
-
+                android:theme="@style/RaisedButtonDark" />
 
             <Button
                 android:id="@+id/CrearAct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_button_creatAct"
-                android:theme="@style/RaisedButtonDark"
-                />
-
-
-
+                android:theme="@style/RaisedButtonDark" />
 
         </LinearLayout>
 
